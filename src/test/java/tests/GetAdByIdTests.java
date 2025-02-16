@@ -37,7 +37,7 @@ public class GetAdByIdTests {
 
         // Проверяем, что есть хотя бы одно объявление в списке
         assertNotNull(ads, "Список объявлений не должен быть null");
-        assertEquals(ads.size(), 1, "Ожидалось одно объявление, но найдено: " + ads.size());
+        assertEquals( 1, ads.size(),"Ожидалось одно объявление, но найдено: " + ads.size());
 
         // Извлекаем первое объявление из списка
         Map<String, Object> ad = ads.get(0);
@@ -81,4 +81,3 @@ public class GetAdByIdTests {
                 .then().statusCode(expectedStatusCode);
     }
 }
-

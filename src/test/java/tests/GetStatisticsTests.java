@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GetStatisticsTests {
 
-    // Получение статистики объявления по валидному id
+    // Получение статистики существующего объявления
     @DataProvider(name = "adIdsValid")
     public static Object[][] sellerIdsValid() {
         return new Object[][]{
@@ -68,4 +68,3 @@ public class GetStatisticsTests {
                 .statusCode(expectedStatusCode);
     }
 }
-
