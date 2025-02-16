@@ -42,6 +42,11 @@ src/
  │   │   │   ├── GetAdByIdTests.java – тесты для получения объявления по UUID.
  │   │   │   ├── GetAdsBySellerIdTests.java – тесты для получения списка объявлений по sellerId.
  │   │   │   ├── GetStatisticsTests.java – тесты для получения статистики объявления по UUID.
+ ├── README.md – общее описание проекта.
+ ├── BUGS.md – список обнаруженных багов.
+ ├── TESTCASES.md – описание тест-кейсов.
+
+ ├── TASK1.md – решение первого задания.
 ```
 
 
