@@ -4,6 +4,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import utils.CreateJson;
 
 import static config.Config.CREATE_ITEM;
 import static config.Config.GET_ITEM_BY_ID;
@@ -23,9 +24,7 @@ public class CreateAdTests {
     public void testCreateValidAd(int sellerID, String name, int price, int contacts,
                                   int likes, int viewCount, int expectedResult) {
         //Соберем в JSON
-        String jsonRequest = String.format("{\"sellerID\":%d, \"name\":\"%s\", \"price\":%d, " +
-                        "\"statistics\":{\"contacts\":%d, \"likes\":%d, \"viewCount\":%d}}",
-                sellerID, name, price, contacts, likes, viewCount);
+        String jsonRequest = CreateJson.create( sellerID, name, price, contacts, likes, viewCount);
 
 
         given()
@@ -44,9 +43,7 @@ public class CreateAdTests {
                                        int likes, int viewCount, int expectedResult) {
 
         //Соберем в JSON
-        String jsonRequest = String.format("{\"sellerID\":%d, \"name\":\"%s\", \"price\":%d, " +
-                        "\"statistics\":{\"contacts\":%d, \"likes\":%d, \"viewCount\":%d}}",
-                sellerID, name, price, contacts, likes, viewCount);
+        String jsonRequest = CreateJson.create(sellerID, name, price, contacts, likes, viewCount);
 
         // Создаём объявление и получаем строку status
         String statusMessage = given()
@@ -156,4 +153,3 @@ public class CreateAdTests {
     }
 
 }
-
